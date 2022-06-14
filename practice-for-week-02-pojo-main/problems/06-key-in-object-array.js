@@ -20,15 +20,16 @@ keyInObjectArray(objArray, 'animal'); // => false
 ***********************************************************************/
 
 function keyInObjectArray(objArray, keyString) {
-	objArray.forEach(element => {
-		for (const key in element) {
-			if (Object.hasOwn(element, key)) {
-				return true;
-			}
+	let hasKey = false;
+	objArray.forEach(obj => {
+		if (Object.hasOwn(obj, keyString)) {
+			console.log('inside if');
+			hasKey = true;
 		}
 	});
-	return false;
+	return hasKey;
 }
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = keyInObjectArray;
