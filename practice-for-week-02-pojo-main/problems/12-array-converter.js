@@ -12,7 +12,15 @@ console.log(arrayConverter(["apple", "banana", "potato", "banana"])); // => {app
 ***********************************************************************/
 
 function arrayConverter(array) {
-  // Your code here
+	let objCounts = {};
+	array.forEach(e => {
+		let count = array.reduce((a, x) => {
+			if (x === e) a++;
+			return a;
+		}, 0);
+		objCounts[e] = count;
+	});
+	return objCounts;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
